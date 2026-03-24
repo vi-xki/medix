@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Script from 'next/script';
 import styles from './Footer.module.css';
+import ThemeToggleButton from './ThemeToggleButton';
 
 export default function Footer() {
   return (
@@ -24,6 +25,9 @@ export default function Footer() {
           <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <div style={{ marginTop: '1rem' }}>
+            <ThemeToggleButton />
+          </div>
         </div>
       </div>
       

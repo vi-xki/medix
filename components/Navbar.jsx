@@ -2,10 +2,12 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
@@ -18,15 +20,15 @@ export default function Navbar() {
         </div>
 
         <div className={styles.centerLinks}>
-          <Link href="/" className={styles.active}>Home</Link>
-          <Link href="/about">About</Link>
+          <Link href="/" className={pathname === '/' ? styles.active : ''}>Home</Link>
+          <Link href="/about" className={pathname === '/about' ? styles.active : ''}>About</Link>
 
           <div
             className={styles.dropdownContainer}
             onMouseEnter={() => setIsMenuOpen(true)}
             onMouseLeave={() => setIsMenuOpen(false)}
           >
-            <Link href="/procedures" className={styles.dropdownTrigger}>Procedures</Link>
+            <Link href="/procedures" className={`${styles.dropdownTrigger} ${pathname.startsWith('/procedures') ? styles.active : ''}`}>Procedures</Link>
             {isMenuOpen && (
               <div className={styles.dropdownMenu}>
                 <Link href="/procedures#hair-transplant">Hair Transplant/Restoration</Link>

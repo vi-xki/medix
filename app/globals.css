@@ -11,6 +11,16 @@
   --font-secondary: var(--font-inter), sans-serif;
 }
 
+[data-theme='light'] {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #e9ecef;
+  --text-primary: #121212;
+  --text-secondary: #495057;
+  --accent-gold: #b38b4a;
+  --accent-gold-hover: #9c7739;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

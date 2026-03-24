@@ -55,14 +55,14 @@
 .title {
   font-size: 4rem;
   margin-bottom: 2rem;
-  color: var(--text-primary);
+  color: #ffffff;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .text {
   font-size: 1.25rem;
   line-height: 1.8;
-  color: var(--text-secondary);
+  color: #e2e8f0;
   margin-bottom: 3rem;
 }
 
@@ -113,12 +113,13 @@
   letter-spacing: 2px;
   font-size: 0.8rem;
   padding-top: 2rem;
+  color: #ffffff;
 }
 
 .arrowDown {
   width: 2px;
   height: 40px;
-  background-color: var(--text-primary);
+  background-color: #ffffff;
   position: relative;
 }
 
@@ -129,8 +130,8 @@
   left: -4px;
   width: 10px;
   height: 10px;
-  border-left: 2px solid var(--text-primary);
-  border-bottom: 2px solid var(--text-primary);
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
   transform: rotate(-45deg);
 }
 

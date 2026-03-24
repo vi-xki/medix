@@ -33,7 +33,7 @@
 .textBlock p {
   font-size: 1.15rem;
   line-height: 1.8;
-  color: #e2e8f0;
+  color: var(--text-secondary);
 }
 
 .imagePlaceholder {
@@ -111,7 +111,7 @@
 .benefitItem {
   flex: 1;
   padding: 2rem;
-  background: rgba(0,0,0,0.3);
+  background: var(--bg-secondary);
   border-radius: 20px;
   border-top: 2px solid var(--accent-gold);
 }
