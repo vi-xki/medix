@@ -36,10 +36,10 @@ export default function HeroScroll() {
       if (!containerRef.current) return;
       const { top, height } = containerRef.current.getBoundingClientRect();
       const slideHeight = height / slides.length;
-      
+
       // Calculate how far we've scrolled into the container
       const scrolled = -top;
-      
+
       if (scrolled < 0) {
         setActiveIndex(0);
       } else if (scrolled >= height - slideHeight) {
@@ -52,7 +52,7 @@ export default function HeroScroll() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial check
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -60,15 +60,15 @@ export default function HeroScroll() {
     <div className={styles.scrollTracker} ref={containerRef}>
       <div className={styles.stickyContainer}>
         {slides.map((slide, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className={`${styles.slide} ${activeIndex === index ? styles.active : ''}`}
             style={{ background: slide.bg }}
           >
             <div className={styles.content}>
               <h1 className={styles.title}>{slide.title}</h1>
               <p className={styles.text}>{slide.text}</p>
-              
+
               {slide.stats && (
                 <div className={styles.statsContainer}>
                   <div className={styles.statBox}>
@@ -85,13 +85,13 @@ export default function HeroScroll() {
                   </div>
                 </div>
               )}
-              
-              {index < slides.length - 1 && (
+
+              {/* {index < slides.length - 1 && (
                 <div className={styles.scrollIndicator}>
                   <span>Scroll</span>
                   <div className={styles.arrowDown}></div>
                 </div>
-              )}
+              )} */}
             </div>
           </div>
         ))}
