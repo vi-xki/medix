@@ -1,0 +1,164 @@
+.section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  width: 100%;
+}
+
+.reverse .container {
+  flex-direction: row-reverse;
+}
+
+.textBlock {
+  flex: 1;
+}
+
+.textBlock h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--accent-gold);
+}
+
+.textBlock p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #e2e8f0;
+}
+
+.imagePlaceholder {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.imgAbstract {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: linear-gradient(45deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+  transform: rotateY(-10deg) rotateX(5deg);
+  transition: transform 0.5s ease;
+}
+
+.imgAbstract:hover {
+  transform: rotateY(0deg) rotateX(0deg);
+}
+
+.imgAbstract.alt1 {
+  background: linear-gradient(135deg, rgba(207,170,107,0.1), rgba(255,255,255,0.05));
+  border-radius: 50% 20px 20px 50%;
+}
+
+.imgAbstract.alt2 {
+  background: linear-gradient(to top right, rgba(207,170,107,0.15), transparent);
+  border-radius: 20px;
+  transform: rotateY(10deg);
+}
+
+.imgAbstract.alt3 {
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent);
+  border-radius: 100px 20px 100px 20px;
+}
+
+.ctaSection {
+  background-color: var(--bg-primary);
+  padding: 8rem 3rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.ctaCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(207,170,107,0.2);
+  border-radius: 30px;
+  padding: 5rem;
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0,0,0,0.3);
+}
+
+.ctaCard h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+}
+
+.benefits {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 5rem;
+  text-align: left;
+}
+
+.benefitItem {
+  flex: 1;
+  padding: 2rem;
+  background: rgba(0,0,0,0.3);
+  border-radius: 20px;
+  border-top: 2px solid var(--accent-gold);
+}
+
+.benefitItem h3 {
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.consultContainer {
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 4rem;
+}
+
+.consultContainer h2 {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.mainBtn {
+  margin-top: 2rem;
+  background: var(--accent-gold);
+  color: var(--bg-primary);
+  border: none;
+  padding: 1.2rem 3rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(207,170,107,0.3);
+}
+
+.mainBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(207,170,107,0.4);
+}
+
+@media (max-width: 900px) {
+  .container { flex-direction: column !important; gap: 3rem; }
+  .imgAbstract { max-width: 400px; aspect-ratio: 1; }
+  .benefits { flex-direction: column; }
+  .ctaCard { padding: 3rem 1.5rem; }
+  .textBlock h2 { font-size: 2.2rem; }
+}

@@ -1,0 +1,230 @@
+.navbar {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  background: rgba(30, 30, 30, 0.85); /* dark pill */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 100;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.logo a {
+  font-family: var(--font-primary);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.centerLinks {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.centerLinks a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.centerLinks a:hover {
+  color: #fff;
+}
+
+.centerLinks a.active {
+  background: #fff;
+  color: #000;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+}
+
+.dropdownContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownTrigger {
+  cursor: pointer;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-width: 280px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  z-index: 1000;
+  animation: slideFadeIn 0.3s ease forwards;
+}
+
+@keyframes slideFadeIn {
+  from { opacity: 0; transform: translate(-50%, -10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.dropdownMenu a {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  color: #ccc;
+  padding: 0.3rem 0;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.dropdownMenu a:hover {
+  color: #eb125d;
+  padding-left: 5px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bookBtn {
+  background: #eb125d; /* Pink Ohmie button */
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  font-family: var(--font-secondary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bookBtn:hover {
+  transform: scale(1.05);
+  background: #ff1c6b;
+}
+
+.hamburger {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  gap: 5px;
+  z-index: 110;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.line {
+  width: 24px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animations */
+.hamburger.open .line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open .line:nth-child(2) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Main Overlay */
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.menuOverlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.menuLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.menuLinks a {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.menuLinks a:hover {
+  color: #eb125d;
+}
+
+.menuBookBtn {
+  margin-top: 2rem;
+  background: #eb125d;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar { 
+    top: 1rem;
+    width: 92%;
+    padding: 0.4rem 0.4rem 0.4rem 1.2rem;
+  }
+  .centerLinks { display: none; }
+  .hamburger { display: flex; }
+  /* Show book button on mobile as per ohmie design */
+  .bookBtn {
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+  }
+}
