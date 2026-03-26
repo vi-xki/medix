@@ -3,19 +3,21 @@
   top: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
+  width: 90%;
+  max-width: 1400px;
+  height: auto;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 0.6rem 0.6rem 0.6rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
-  background: var(--nav-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   z-index: 1000;
   border-radius: 50px;
-  border: 1px solid rgba(201, 168, 76, 0.3);
-  width: 90%;
-  max-width: 800px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .logo a {
