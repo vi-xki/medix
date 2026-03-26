@@ -20,12 +20,20 @@ export default function Footer() {
           <button className={styles.whatsappNav}>WhatsApp Us</button>
         </div>
         
+        <div className={styles.contactInfo}>
+          <h3>Clinic Info</h3>
+          <p>123 Aesthetic Avenue<br/>Coimbatore, Tamil Nadu 641001</p>
+          <p>Mon - Sat: 10:00 AM - 7:00 PM</p>
+          <p>+91 98765 43210</p>
+        </div>
+        
         <div className={styles.socials}>
           <h3>Connect</h3>
           <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
           <div style={{ marginTop: '1rem' }}>
+            {/* Keeping the ThemeToggleButton space but since we are locking to White/Gold, we can just leave it or remove it. Let's keep it to not break the user's component tree if they rely on it */}
             <ThemeToggleButton />
           </div>
         </div>

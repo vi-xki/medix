@@ -1,18 +1,26 @@
+.homeWrapper {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
 .section {
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  padding: 6rem 3rem;
+  padding: 4rem 3rem;
   position: relative;
   overflow: hidden;
+  background: var(--bg-primary);
+}
+
+.section:nth-of-type(even) {
+  background: var(--bg-secondary);
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 5rem;
+  gap: 6rem;
   width: 100%;
 }
 
@@ -25,15 +33,20 @@
 }
 
 .textBlock h2 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  color: var(--accent-gold);
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
 }
 
 .textBlock p {
   font-size: 1.15rem;
   line-height: 1.8;
   color: var(--text-secondary);
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .imagePlaceholder {
@@ -41,63 +54,70 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  perspective: 1000px;
 }
 
 .imgAbstract {
+  position: relative;
   width: 100%;
   aspect-ratio: 4/5;
-  background: linear-gradient(45deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-  transform: rotateY(-10deg) rotateX(5deg);
-  transition: transform 0.5s ease;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  box-shadow: 0 30px 60px -15px rgba(0,0,0,0.6);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .imgAbstract:hover {
-  transform: rotateY(0deg) rotateX(0deg);
+  transform: translateY(-10px);
 }
 
-.imgAbstract.alt1 {
-  background: linear-gradient(135deg, rgba(207,170,107,0.1), rgba(255,255,255,0.05));
-  border-radius: 50% 20px 20px 50%;
-}
-
-.imgAbstract.alt2 {
-  background: linear-gradient(to top right, rgba(207,170,107,0.15), transparent);
-  border-radius: 20px;
-  transform: rotateY(10deg);
-}
-
-.imgAbstract.alt3 {
-  background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent);
-  border-radius: 100px 20px 100px 20px;
+.imgAbstract::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.5);
+  pointer-events: none;
 }
 
 .ctaSection {
-  background-color: var(--bg-primary);
-  padding: 8rem 3rem;
+  background-color: var(--bg-tertiary);
+  padding: 5rem 3rem 8rem;
   display: flex;
   justify-content: center;
   position: relative;
+  border-top: 1px solid rgba(201, 168, 76, 0.1);
 }
 
 .ctaCard {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(207,170,107,0.2);
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.04);
   border-radius: 30px;
   padding: 5rem;
-  max-width: 1000px;
+  max-width: 1100px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 0 40px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(201, 168, 76, 0.08) 0%, transparent 80%);
+  pointer-events: none;
 }
 
 .ctaCard h2 {
-  font-size: 2.5rem;
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 400;
   margin-bottom: 3rem;
   color: var(--text-primary);
+  position: relative;
+  z-index: 1;
 }
 
 .benefits {
@@ -106,53 +126,97 @@
   justify-content: center;
   margin-bottom: 5rem;
   text-align: left;
+  position: relative;
+  z-index: 1;
 }
 
 .benefitItem {
   flex: 1;
-  padding: 2rem;
-  background: var(--bg-secondary);
+  padding: 2.5rem;
+  background: #FFFFFF;
   border-radius: 20px;
-  border-top: 2px solid var(--accent-gold);
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.benefitItem:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+  transform: translateY(-5px);
 }
 
 .benefitItem h3 {
-  color: var(--accent-gold);
+  color: var(--text-primary);
   margin-bottom: 1rem;
-  font-size: 1.3rem;
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 .consultContainer {
   margin-top: 4rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
   padding-top: 4rem;
+  position: relative;
+  z-index: 1;
 }
 
 .consultContainer h2 {
-  font-family: var(--font-primary);
-  font-size: 2rem;
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
   margin-bottom: 1rem;
 }
 
+.consultContainer p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
 .mainBtn {
-  margin-top: 2rem;
-  background: var(--accent-gold);
-  color: var(--bg-primary);
-  border: none;
-  padding: 1.2rem 3rem;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--accent-gold);
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  padding: 1rem 3rem;
+  font-family: var(--font-secondary);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  letter-spacing: 1px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(207,170,107,0.3);
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.mainBtn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 0;
+}
+
+.mainBtn:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .mainBtn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 25px rgba(207,170,107,0.4);
+  color: #FFFFFF;
+  border-color: var(--accent-gold);
+}
+
+.mainBtn span {
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 900px) {

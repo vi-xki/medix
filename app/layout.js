@@ -1,4 +1,4 @@
-import { Outfit, Inter } from "next/font/google";
+import { Outfit, Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -15,6 +15,13 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
+
 export const metadata = {
   title: "Bramma Face and Hair | Premium Hair Restoration",
   description: "Experience a transparent, diagnostic-led consultation at Bramma Face and Hair. We move beyond surface-level fixes with specialized treatments tailored to your unique needs.",
@@ -22,7 +29,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${inter.variable} ${cormorant.variable}`}>
       <body>
         <ThemeProvider>
           <Navbar />
